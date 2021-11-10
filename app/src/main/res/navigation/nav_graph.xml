@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/movieFragment">
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.and_eval_final_loic_hubermont.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_detailmovieFragment"
+            app:destination="@id/detailmovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trendingFragment"
+        android:name="com.example.and_eval_final_loic_hubermont.TrendingFragment"
+        android:label="fragment_trending"
+        tools:layout="@layout/fragment_trending" >
+        <action
+            android:id="@+id/action_trendingFragment_to_detailmovieFragment"
+            app:destination="@id/detailmovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailmovieFragment"
+        android:name="com.example.and_eval_final_loic_hubermont.DetailmovieFragment"
+        android:label="fragment_detailmovie"
+        tools:layout="@layout/fragment_detailmovie" >
+        <argument
+            android:name="results"
+            app:argType="com.example.and_eval_final_loic_hubermont.model.ResultMovie" />
+    </fragment>
 </navigation>
