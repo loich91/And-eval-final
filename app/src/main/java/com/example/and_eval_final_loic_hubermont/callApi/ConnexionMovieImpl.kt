@@ -5,5 +5,5 @@ import retrofit2.Response
 
 class ConnexionMovieImpl : AppRetroMovie() {
     suspend fun getMovie(query:String):Response<MovieData> = getRetrofit().create(ConnexionMovie::class.java).searchMovie(query=query)
-    suspend fun getMtrending(query:String):Response<MovieData> = getRetrofit().create(ConnexionMovie::class.java).searchMovie(query=query)
+    suspend fun getMtrending():Response<MovieData> = getRetrofit().create(ConnexionMovie::class.java).searchtrending()
 }
